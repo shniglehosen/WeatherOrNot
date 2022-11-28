@@ -8,6 +8,18 @@ console.log(clearEl);
 const history = JSON.parse(localStorage.getItem("history")) || [];
 renderSearchHistory();
 
+// clearEl.addEventListener("click", function() {
+//   var clearHistory = document.getElementsByClassName("searchAndHistory");
+//   clearHistory = "";
+//     document.querySelector(".history-container") = "";
+// });
+// function clearHistory(event) {
+//   event.preventDefault();
+//   var removeableHist = document.getElementsByClassName("searchAndHistory");
+//   removeableHist = "";
+// }
+// clearEl.on("submit", clearHistory);
+
 // fetch for current weather
 function apiCall(city) {
   fetch(
@@ -35,9 +47,9 @@ function apiCall(city) {
         })
       );
       $("#displayboxtitle").text(data.name);
-      $("#temp").text(`Temp: ${data.main.temp}`);
+      $("#temp").text(`Temp: ${data.main.temp} 🌡️`);
       $("#wind").text(`Wind: ${data.wind.speed} 🌬️`);
-      $("#humidity").text(`Humidity: ${data.main.humidity}`);
+      $("#humidity").text(`Humidity: ${data.main.humidity} 💦`);
       // if we need data from a previous API call we have to WAIT for that data to be returned to
       oneCall(data.coord.lat, data.coord.lon);
     });
@@ -85,9 +97,9 @@ function oneCall(lat, lon) {
             "en-US",
             { weekday: "long" }
           )}</p>
-          <p class="card-text">Temp ${element.temp.day}</p>
-          <p class="card-text">Wind ${element.wind_speed}</p>
-          <p class="card-text">Humidity ${element.humidity}</p>
+          <p class="card-text">🌡️ Temp ${element.temp.day}</p>
+          <p class="card-text">🌬️ Wind ${element.wind_speed}</p>
+          <p class="card-text">💦 Humidity ${element.humidity}</p>
           </div
         `;
         document.getElementById("5-day").append(card);
@@ -121,9 +133,3 @@ function renderSearchHistory() {
   }
 }
 
-clearEl.on("reset", handleClear);
-
-function handleClear () {
-  document.querySelector(".history-container") = "";
-
-}
