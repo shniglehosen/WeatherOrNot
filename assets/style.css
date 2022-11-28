@@ -1,0 +1,58 @@
+h2 {
+    height: 500%;
+  }
+  
+  form {
+    border-bottom: solid black;
+  }
+  
+  .forecast {
+    margin-bottom: 5%;
+  }
+  
+  #displayboxtitle {
+    font-size: 4em;
+  }
+  
+  .city-search {
+    display: flex;
+  }
+  
+  button {
+    display: block;
+  }
+  
+  .card-body {
+    background-color: grey;
+    color: white;
+  }
+  
+  .flex-parent {
+    display: flex;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+  
+  .card {
+    min-width: 150px;
+  }
+  
+  .green{
+    background-color: green;
+  }
+  .yellow{
+    background-color: yellow;
+  }
+  .orange {
+    background-color: orange;
+  }
+  .red {
+    background-color: red;
+  }
+  .purple {
+    background-color: purple;
+  }
